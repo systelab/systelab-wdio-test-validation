@@ -5,6 +5,10 @@ export class NavigationBarPage extends BasePage {
 		super('systelab-navbar');
     }
 
+    public getNavTabs(): Tabs {
+        return new Tabs(this.byClassName('slab-navbar-elements'));
+    }
+
     public getFormComponents(): Tab {
         return new Tab(this.byId('nav-0'));
     }
