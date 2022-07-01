@@ -26,4 +26,14 @@ describe('TC000X_WebdriverIO-Validation_browser_Interaction', () => {
 			AssertionUtility.expectEqual(await navigationBar.getIcons().getText(), iconsTabText);
 		});
 	});
+
+	it('WebdriverIO-Validation - Navigate to systelab components website and navigate to an specific tab', async () => {
+		const iconsTabPosition: number = 1;
+		const iconsActive: string = 'active';
+		await navigationBar.waitToBeDisplayed();
+		await browserService.openTabByNumber(iconsTabPosition);
+		await ReportUtility.addExpectedResult('The systelab components tab is open and active', async() => {
+			AssertionUtility.expectContains(await navigationBar.getNavTabAttributeByIndex(iconsTabPosition, 'class'), iconsActive);
+		});
+	});
 });

@@ -1,4 +1,4 @@
-import { BasePage, Tab, Tabs } from 'systelab-components-wdio-test';
+import { BasePage, Tab, Tabs, ElementFinder } from 'systelab-components-wdio-test';
 
 export class NavigationBarPage extends BasePage {
     constructor() {
@@ -7,6 +7,13 @@ export class NavigationBarPage extends BasePage {
 
     public getNavTabs(): Tabs {
         return new Tabs(this.byClassName('slab-navbar-elements'));
+    }
+
+    public async getNavTabAttributeByIndex(index: number, attribute: string): Promise<string> {
+        return this.getNavTabs().
+        allByTagName('li').
+        get(index).
+        getAttribute(attribute);
     }
 
     public getFormComponents(): Tab {
@@ -33,7 +40,7 @@ export class NavigationBarPage extends BasePage {
         return new Tab(this.byId('nav-5'));
     }
 
-    public getStyles(): Tabs {
-        return new Tabs(this.byId('nav-6'));
+    public getStyles(): Tab {
+        return new Tab(this.byId('nav-6'));
     }
 }
