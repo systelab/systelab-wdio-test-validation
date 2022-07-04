@@ -1,13 +1,12 @@
 import { environment } from '../utils/environment.dev';
 import { Browser } from 'systelab-components-wdio-test';
 import { NavigationBarPage } from '../pageObjects/navigationBarPage';
-import { ShowCaseComponentsPage } from '../pageObjects/showCaseComponentsPage';
 
 export class BrowserInteractionService {
   navigationBar = new NavigationBarPage();
 
   public async navigateToSystelabComponents(): Promise<any> {
-    return Browser.navigateToURL(environment.host) as Promise<any>;
+    return Browser.navigateToURL(environment.systelabComponents) as Promise<any>;
   }
 
   /**
