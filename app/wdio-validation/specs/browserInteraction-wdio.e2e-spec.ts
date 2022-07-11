@@ -34,7 +34,7 @@ describe('TC0002_WebdriverIO-Validation_browser_Interaction', () => {
     );
   });
 
-  it('WebdriverIO-Validation - Navigate to Systelab Components website and navigate to an specific tab', async () => {
+  it('TC0002-02-WebdriverIO-Validation - Navigate to Systelab Components website and navigate to an specific tab', async () => {
     const navigationTab: number = 2;
     const iconsActive: string = 'active';
     await navigationBar.waitToBeDisplayed();
@@ -50,7 +50,7 @@ describe('TC0002_WebdriverIO-Validation_browser_Interaction', () => {
     );
   });
 
-  it('TC0002-02-WebdriverIO-Validation - Navigate to Systelab Components and open Systelab Components Github in a new window', async () => {
+  it('TC0002-03-WebdriverIO-Validation - Navigate to Systelab Components and open Systelab Components Github in a new window', async () => {
     await navigationBar.waitToBeDisplayed();
     await ReportUtility.addExpectedResult(
       'The Systelab Components tab is open and active',
@@ -73,7 +73,7 @@ describe('TC0002_WebdriverIO-Validation_browser_Interaction', () => {
     );
   });
 
-  it('TC0002-03-WebdriverIO-Validation - Navigate to Systelab Components, open Systelab Github and switch back', async () => {
+  it('TC0002-04-WebdriverIO-Validation - Navigate to Systelab Components, open Systelab Github and switch back', async () => {
     await navigationBar.waitToBeDisplayed();
     await browser.newWindow(environment.sytelabGitHub);
     await browser.switchWindow(environment.systelabComponents);
