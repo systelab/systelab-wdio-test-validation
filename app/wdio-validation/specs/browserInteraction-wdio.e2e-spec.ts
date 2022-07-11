@@ -3,7 +3,7 @@ import { BrowserInteractionService } from '../services/browserInteraction-servic
 import { NavigationBarPage } from '../pageObjects/navigationBarPage';
 import { environment } from '../utils/environment.dev';
 
-describe('TC000X_WebdriverIO-Validation_browser_Interaction', () => {
+fdescribe('TC000X_WebdriverIO-Validation_browser_Interaction', () => {
 	let browserService: BrowserInteractionService;
 	let navigationBar: NavigationBarPage;
 
@@ -48,7 +48,7 @@ describe('TC000X_WebdriverIO-Validation_browser_Interaction', () => {
 
 	it('WebdriverIO-Validation - Navigate to systelab components, open Systelab Github and switch back Systelab Components', async () => {
 		await navigationBar.waitToBeDisplayed();
-		await browser.newWindow(environment.sytelabGitHub);
+		await browser.newWindow(environment.sytelabGitHub)
 		await browser.switchWindow(environment.systelabComponents);
 		await ReportUtility.addExpectedResult('The systelab components tab is open again', async() => {
 			AssertionUtility.expectContains(await browser.getTitle(), 'Systelab Components Library');

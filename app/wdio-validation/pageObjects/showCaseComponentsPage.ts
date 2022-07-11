@@ -24,7 +24,15 @@ export class ShowCaseComponentsPage extends BasePage {
     public getTextBoxById(): InputField {
       return new InputField(this.byId('full-width-input'));
     }
-  
+
+    public getIconQuestionButton(): Button {
+      return new Button(this.byCSS('.icon-question'));
+    } 
+
+    public getTextBoxDisabledById(): Button {
+      return new Button(this.byId('disabled-input'));
+    }
+
     public getTextBoxByTagName(): InputField {
       return new InputField(this.byTagName('input'));
     }
