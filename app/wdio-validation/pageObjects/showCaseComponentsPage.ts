@@ -25,8 +25,8 @@ export class ShowCaseComponentsPage extends BasePage {
       return new InputField(this.byId('full-width-input'));
     }
 
-     public getButtonByCCS(): Button {
-      return new Button(this.byCSS('showcase-searcher > .container-fluid > div:nth-of-type(1) .icon-question'));
+    public getIconQuestionButton(): Button {
+      return new Button(this.byCSS('.icon-question'));
     } 
 
     public getTextBoxDisabledById(): Button {

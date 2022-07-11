@@ -1,4 +1,4 @@
-import { Widget, MessagePopup, Browser, Dialog } from 'systelab-components-wdio-test';
+import { Widget, Browser } from 'systelab-components-wdio-test';
 
 export class SystelabModalComponent extends Widget {
     constructor() {
