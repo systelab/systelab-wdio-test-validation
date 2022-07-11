@@ -6,13 +6,15 @@ import { environment } from '../utils/environment.dev';
 describe('TC0002_WebdriverIO-Validation_browser_Interaction', () => {
   let browserService: BrowserInteractionService;
   let navigationBar: NavigationBarPage;
+  let systelabTitle = 'Systelab Components Library';
+  let systelabGitHubTitle = 'systelab/systelab-components · GitHub';
 
   beforeEach(async () => {
     browserService = new BrowserInteractionService();
     navigationBar = new NavigationBarPage();
-    TestIdentification.setTmsLink('TC000X_WebdriverIO-Validation_browser_Interaction');
+    TestIdentification.setTmsLink('TC0002_WebdriverIO-Validation_browser_Interaction');
     TestIdentification.setDescription(
-      'Goal: The purpose of this test case is to verify the '
+      'Goal: The purpose of this test case is to verify the browser interaction navigation '
     );
     await browserService.navigateToSystelabComponents();
   });
@@ -55,7 +57,7 @@ describe('TC0002_WebdriverIO-Validation_browser_Interaction', () => {
       async () => {
         AssertionUtility.expectContains(
           await browser.getTitle(),
-          'Systelab Components Library'
+          systelabTitle
         );
       }
     );
@@ -65,7 +67,7 @@ describe('TC0002_WebdriverIO-Validation_browser_Interaction', () => {
       async () => {
         AssertionUtility.expectContains(
           await browser.getTitle(),
-          'systelab/systelab-components · GitHub'
+          systelabGitHubTitle
         );
       }
     );
@@ -80,7 +82,7 @@ describe('TC0002_WebdriverIO-Validation_browser_Interaction', () => {
       async () => {
         AssertionUtility.expectContains(
           await browser.getTitle(),
-          'Systelab Components Library'
+          systelabTitle
         );
       }
     );

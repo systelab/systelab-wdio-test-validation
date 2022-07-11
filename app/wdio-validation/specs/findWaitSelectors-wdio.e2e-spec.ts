@@ -3,25 +3,31 @@ import { BrowserInteractionService } from '../services/browserInteraction-servic
 import { NavigationBarPage } from '../pageObjects/navigationBarPage';
 import { ShowCaseComponentsPage } from '../pageObjects/showCaseComponentsPage';
 
-describe('TC000X_WebdriverIO-Validation_find_Selectors', () => {
+describe('TC0003_WebdriverIO-Validation_find_Wait_Selectors', () => {
   let browserService: BrowserInteractionService;
   let navigationBar: NavigationBarPage;
   let showCasePage: ShowCaseComponentsPage;
+
+  let foundByID = 'found by Id';
+  let foundByClass = 'found by ClassName';
+  let foundByCss = 'found by Css';
+  let foundByTagName = 'found by TagName';
+  const modalsTab: number = 1;
 
   beforeEach(async () => {
     browserService = new BrowserInteractionService();
     navigationBar = new NavigationBarPage();
     showCasePage = new ShowCaseComponentsPage();
-    TestIdentification.setTmsLink('TC000X_WebdriverIO-Validation_e2e');
+    TestIdentification.setTmsLink('TC0003_WebdriverIO-Validation_find_Wait_Selectors');
     TestIdentification.setDescription(
-      'Goal: The purpose of this test case is to verify that an element is found by many selectors'
+      'Goal: The purpose of this test case is to verify that elements are found by selectors to be present, displayed, enabled and clickable'
     );
     await browserService.navigateToSystelabComponents();
   });
 
-  it('WebdriverIO-Validation - Navigate to systelab components website and find an Input Field by Id to be displayed', async () => {
+  it('TC0003-01-WebdriverIO-Validation - Navigate to Systelab Components website and find an Input Field by Id to be displayed', async () => {
     await navigationBar.waitToBeDisplayed();
-    await showCasePage.getTextBoxById().setText('found By Id');
+    await showCasePage.getTextBoxById().setText(foundByID);
     await showCasePage.getTextBoxById().waitToBeDisplayed();
 
     await ReportUtility.addExpectedResult(
@@ -34,9 +40,9 @@ describe('TC000X_WebdriverIO-Validation_find_Selectors', () => {
     );
   });
 
-  it('WebdriverIO-Validation - Navigate to systelab components website and find an Input Field by ClassName to be present', async () => {
+  it('TC0003-02-WebdriverIO-Validation - Navigate to Systelab Components website and find an Input Field by ClassName to be present', async () => {
     await navigationBar.waitToBeDisplayed();
-    await showCasePage.getTextBoxByClassName().setText('found By ClassName');
+    await showCasePage.getTextBoxByClassName().setText(foundByClass);
     await showCasePage.getTextBoxByClassName().waitToBePresent();
 
     await ReportUtility.addExpectedResult(
@@ -49,9 +55,9 @@ describe('TC000X_WebdriverIO-Validation_find_Selectors', () => {
     );
   });
 
-  it('WebdriverIO-Validation - Navigate to systelab components website and find an Input Field by Css to be enabled', async () => {
+  it('TC0003-03-WebdriverIO-Validation - Navigate to Systelab Components website and find an Input Field by Css to be enabled', async () => {
     await navigationBar.waitToBeDisplayed();
-    await showCasePage.getTextBoxByCss().setText('found By Css');
+    await showCasePage.getTextBoxByCss().setText(foundByCss);
     await showCasePage.getTextBoxByCss().waitToBeEnabled();
 
     await ReportUtility.addExpectedResult(
@@ -64,9 +70,9 @@ describe('TC000X_WebdriverIO-Validation_find_Selectors', () => {
     );
   });
 
-  it('WebdriverIO-Validation - Navigate to systelab components website and find an Input Field by TagName to be clickable', async () => {
+  it('TC0003-04-WebdriverIO-Validation - Navigate to Systelab Components website and find an Input Field by TagName to be clickable', async () => {
     await navigationBar.waitToBeDisplayed();
-    await showCasePage.getTextBoxByTagName().setText('found By TagName');
+    await showCasePage.getTextBoxByTagName().setText(foundByTagName);
     await showCasePage.getTextBoxByTagName().waitToBeClickable();
 
     await ReportUtility.addExpectedResult(
@@ -79,7 +85,7 @@ describe('TC000X_WebdriverIO-Validation_find_Selectors', () => {
     );
   });
 
-  it('WebdriverIO-Validation - Navigate to systelab components website and find Label by Text', async () => {
+  it('TC0003-05-WebdriverIO-Validation - Navigate to Systelab Components website and find Label by Text', async () => {
     const fakeLabel = 'fakeLabelText';
     const existLabel = 'Chips';
     await navigationBar.waitToBeDisplayed();
@@ -103,8 +109,7 @@ describe('TC000X_WebdriverIO-Validation_find_Selectors', () => {
     );
   });
 
-  it('WebdriverIO-Validation - Navigate to systelab components website and find Button by Text', async () => {
-    const modalsTab: number = 1;
+  it('TC0003-06-WebdriverIO-Validation - Navigate to Systelab Components website and find Button by Text', async () => {
     const fakeButton = 'fakeButtonText';
     const existButton = 'Calendar';
     await navigationBar.waitToBeDisplayed();
@@ -129,7 +134,7 @@ describe('TC000X_WebdriverIO-Validation_find_Selectors', () => {
     );
   });
 
-  it('WebdriverIO-Validation - Navigate to systelab components website and find Input Field Disabled', async () => {
+  it('TC0003-07-WebdriverIO-Validation - Navigate to Systelab Components website and find Input Field Disabled', async () => {
     await navigationBar.waitToBeDisplayed();
     await showCasePage.getTextBoxDisabled().waitToBeNotClickable();
     await ReportUtility.addExpectedResult(
@@ -142,8 +147,7 @@ describe('TC000X_WebdriverIO-Validation_find_Selectors', () => {
     );
   });
 
-  it('WebdriverIO-Validation - Navigate to systelab components website and find all buttons by ClassName, TagName and CSS', async () => {
-    const modalsTab: number = 1;
+  it('TC0003-08-WebdriverIO-Validation - Navigate to Systelab Components website and find all buttons by ClassName, TagName and CSS', async () => {
     const numberOfButtons: number = 26;
     await navigationBar.waitToBeDisplayed();
     await browserService.openTabByNumber(modalsTab);

@@ -9,6 +9,7 @@ describe('TC0001_WebdriverIO-Validation_Action_OnSelectors', () => {
   let navigationBar: NavigationBarPage;
   let showCasePage: ShowCaseComponentsPage;
   let modalPage: SystelabModalComponent;
+  let systelabTitle = 'Systelab Components Library';
   let foundByID = 'found by Id';
   let empty = '';
   let attribute = 'placeholder';
@@ -21,10 +22,10 @@ describe('TC0001_WebdriverIO-Validation_Action_OnSelectors', () => {
     modalPage = new SystelabModalComponent();
 
     TestIdentification.setTmsLink(
-      'TC000X_WebdriverIO-Validation_Action_OnSelectors'
+      'TC0001_WebdriverIO-Validation_Action_OnSelectors'
     );
     TestIdentification.setDescription(
-      'Goal: The purpose of this test case is to verify the actions on elements'
+      'Goal: The purpose of this test case is to verify different actions on elements are performed'
     );
     await browserService.navigateToSystelabComponents();
   });
@@ -36,7 +37,7 @@ describe('TC0001_WebdriverIO-Validation_Action_OnSelectors', () => {
       async () => {
         AssertionUtility.expectContains(
           await browser.getTitle(),
-          'Systelab Components Library'
+          systelabTitle
         );
       }
     );
@@ -60,7 +61,7 @@ describe('TC0001_WebdriverIO-Validation_Action_OnSelectors', () => {
       async () => {
         AssertionUtility.expectContains(
           await browser.getTitle(),
-          'Systelab Components Library'
+          systelabTitle
         );
       }
     );
@@ -93,7 +94,7 @@ describe('TC0001_WebdriverIO-Validation_Action_OnSelectors', () => {
       async () => {
         AssertionUtility.expectContains(
           await browser.getTitle(),
-          'Systelab Components Library'
+          systelabTitle
         );
       }
     );
@@ -114,7 +115,7 @@ describe('TC0001_WebdriverIO-Validation_Action_OnSelectors', () => {
       async () => {
         AssertionUtility.expectContains(
           await browser.getTitle(),
-          'Systelab Components Library'
+          systelabTitle
         );
       }
     );

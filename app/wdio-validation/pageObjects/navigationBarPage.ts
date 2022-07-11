@@ -1,4 +1,4 @@
-import { BasePage, Tab, Tabs, ElementFinder } from 'systelab-components-wdio-test';
+import { BasePage, Tab, Tabs } from 'systelab-components-wdio-test';
 
 export class NavigationBarPage extends BasePage {
     constructor() {
