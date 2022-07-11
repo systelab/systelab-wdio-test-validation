@@ -4,7 +4,7 @@ import { NavigationBarPage } from '../pageObjects/navigationBarPage';
 import { ShowCaseComponentsPage } from '../pageObjects/showCaseComponentsPage';
 import { SystelabModalComponent } from '../pageObjects/systelabModalComponent';
 
-describe('TC000X_WebdriverIO-Validation_Action_OnSelectors', () => {
+describe('TC0001_WebdriverIO-Validation_Action_OnSelectors', () => {
   let browserService: BrowserInteractionService;
   let navigationBar: NavigationBarPage;
   let showCasePage: ShowCaseComponentsPage;
@@ -29,10 +29,10 @@ describe('TC000X_WebdriverIO-Validation_Action_OnSelectors', () => {
     await browserService.navigateToSystelabComponents();
   });
 
-  it('WebdriverIO-Validation - Navigate to systelab components website, find an Input Field by Id, set a new value and get of the value', async () => {
+  it('TC0001-01-WebdriverIO-Validation - Navigate to Systelab Components website, find an Input Field by Id, set a new value and get of the value', async () => {
     await showCasePage.waitToBeDisplayed();
     await ReportUtility.addExpectedResult(
-      'The systelab components website is open and active',
+      'The Systelab Components website is open and active',
       async () => {
         AssertionUtility.expectContains(
           await browser.getTitle(),
@@ -53,10 +53,10 @@ describe('TC000X_WebdriverIO-Validation_Action_OnSelectors', () => {
     );
   });
 
-  it('WebdriverIO-Validation - Navigate to systelab components website, find an Input Field by Id, set and clear a new value', async () => {
+  it('TC0001-02-WebdriverIO-Validation - Navigate to Systelab Components website, find an Input Field by Id, set and clear a new value', async () => {
     await showCasePage.waitToBeDisplayed();
     await ReportUtility.addExpectedResult(
-      'The systelab components website is open and active',
+      'The Systelab Components website is open and active',
       async () => {
         AssertionUtility.expectContains(
           await browser.getTitle(),
@@ -66,7 +66,7 @@ describe('TC000X_WebdriverIO-Validation_Action_OnSelectors', () => {
     );
     await showCasePage.getTextBoxById().setText(foundByID);
     await ReportUtility.addExpectedResult(
-      'When setting a new value in the systelab components website, it is found correctly by Id and set value are correct',
+      'When setting a new value in the Systelab Components website, it is found correctly by Id and set value are correct',
       async () => {
         AssertionUtility.expectEqual(
           await showCasePage.getTextBoxById().getText(),
@@ -86,10 +86,10 @@ describe('TC000X_WebdriverIO-Validation_Action_OnSelectors', () => {
     );
   });
 
-  it('WebdriverIO-Validation - Navigate to systelab components website, find an Input Field by Id and click in button', async () => {
+  it('TC0001-03-WebdriverIO-Validation - Navigate to Systelab Components website, find an Input Field by Id and click in button', async () => {
     await showCasePage.waitToBeDisplayed();
     await ReportUtility.addExpectedResult(
-      'The systelab components website is open and active',
+      'The Systelab Components website is open and active',
       async () => {
         AssertionUtility.expectContains(
           await browser.getTitle(),
@@ -107,10 +107,10 @@ describe('TC000X_WebdriverIO-Validation_Action_OnSelectors', () => {
     );
   });
 
-  it('WebdriverIO-Validation - Navigate to systelab components website, find an Input Field by Id and identifies an attribute from that field', async () => {
+  it('TC0001-04-WebdriverIO-Validation - Navigate to Systelab Components website, find an Input Field by Id and identifies an attribute from that field', async () => {
     await showCasePage.waitToBeDisplayed();
     await ReportUtility.addExpectedResult(
-      'The systelab components website is open and active',
+      'The Systelab Components website is open and active',
       async () => {
         AssertionUtility.expectContains(
           await browser.getTitle(),
