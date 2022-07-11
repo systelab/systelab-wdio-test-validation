@@ -16,31 +16,7 @@ export class NavigationBarPage extends BasePage {
         getAttribute(attribute);
     }
 
-    public getFormComponents(): Tab {
-        return new Tab(this.byId('nav-0'));
-    }
-
-    public getModals(): Tab {
-        return new Tab(this.byId('nav-1'));
-    }
-
-    public getNavigation(): Tab {
-        return new Tab(this.byId('nav-2'));
-    }
-
-    public getTables(): Tab {
-        return new Tab(this.byId('nav-3'));
-    }
-
-    public getUtils(): Tab {
-        return new Tab(this.byId('nav-4'));
-    }
-
     public getIcons(): Tab {
         return new Tab(this.byId('nav-5'));
-    }
-
-    public getStyles(): Tab {
-        return new Tab(this.byId('nav-6'));
     }
 }

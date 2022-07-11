@@ -1,13 +1,9 @@
-import {
-  AssertionUtility,
-  ReportUtility,
-  TestIdentification,
-} from "systelab-components-wdio-test";
-import { BrowserInteractionService } from "../services/browserInteraction-service";
-import { NavigationBarPage } from "../pageObjects/navigationBarPage";
-import { ShowCaseComponentsPage } from "../pageObjects/showCaseComponentsPage";
+import { AssertionUtility, ReportUtility, TestIdentification } from 'systelab-components-wdio-test';
+import { BrowserInteractionService } from '../services/browserInteraction-service';
+import { NavigationBarPage } from '../pageObjects/navigationBarPage';
+import { ShowCaseComponentsPage } from '../pageObjects/showCaseComponentsPage';
 
-describe("TC000X_WebdriverIO-Validation_find_Selectors", () => {
+describe('TC000X_WebdriverIO-Validation_find_Selectors', () => {
   let browserService: BrowserInteractionService;
   let navigationBar: NavigationBarPage;
   let showCasePage: ShowCaseComponentsPage;
@@ -16,20 +12,20 @@ describe("TC000X_WebdriverIO-Validation_find_Selectors", () => {
     browserService = new BrowserInteractionService();
     navigationBar = new NavigationBarPage();
     showCasePage = new ShowCaseComponentsPage();
-    TestIdentification.setTmsLink("TC000X_WebdriverIO-Validation_e2e");
+    TestIdentification.setTmsLink('TC000X_WebdriverIO-Validation_e2e');
     TestIdentification.setDescription(
-      "Goal: The purpose of this test case is to verify that an element is found by many selectors"
+      'Goal: The purpose of this test case is to verify that an element is found by many selectors'
     );
     await browserService.navigateToSystelabComponents();
   });
 
-  it("WebdriverIO-Validation - Navigate to systelab components website and find an Input Field by Id to be displayed", async () => {
+  it('WebdriverIO-Validation - Navigate to systelab components website and find an Input Field by Id to be displayed', async () => {
     await navigationBar.waitToBeDisplayed();
-    await showCasePage.getTextBoxById().setText("found By Id");
+    await showCasePage.getTextBoxById().setText('found By Id');
     await showCasePage.getTextBoxById().waitToBeDisplayed();
 
     await ReportUtility.addExpectedResult(
-      "The systelab component is correctly displayed found by Id",
+      'The systelab component is correctly displayed found by Id',
       async () => {
         AssertionUtility.expectTrue(
           await showCasePage.getTextBoxById().isDisplayed()
@@ -38,13 +34,13 @@ describe("TC000X_WebdriverIO-Validation_find_Selectors", () => {
     );
   });
 
-  it("WebdriverIO-Validation - Navigate to systelab components website and find an Input Field by ClassName to be present", async () => {
+  it('WebdriverIO-Validation - Navigate to systelab components website and find an Input Field by ClassName to be present', async () => {
     await navigationBar.waitToBeDisplayed();
-    await showCasePage.getTextBoxByClassName().setText("found By ClassName");
+    await showCasePage.getTextBoxByClassName().setText('found By ClassName');
     await showCasePage.getTextBoxByClassName().waitToBePresent();
 
     await ReportUtility.addExpectedResult(
-      "The systelab component found by ClassName is Present",
+      'The systelab component found by ClassName is Present',
       async () => {
         AssertionUtility.expectTrue(
           await showCasePage.getTextBoxByClassName().isPresent()
@@ -53,13 +49,13 @@ describe("TC000X_WebdriverIO-Validation_find_Selectors", () => {
     );
   });
 
-  it("WebdriverIO-Validation - Navigate to systelab components website and find an Input Field by Css to be enabled", async () => {
+  it('WebdriverIO-Validation - Navigate to systelab components website and find an Input Field by Css to be enabled', async () => {
     await navigationBar.waitToBeDisplayed();
-    await showCasePage.getTextBoxByCss().setText("found By Css");
+    await showCasePage.getTextBoxByCss().setText('found By Css');
     await showCasePage.getTextBoxByCss().waitToBeEnabled();
 
     await ReportUtility.addExpectedResult(
-      "The systelab component found by Css is shown as Enabled",
+      'The systelab component found by Css is shown as Enabled',
       async () => {
         AssertionUtility.expectTrue(
           await showCasePage.getTextBoxByCss().isEnabled()
@@ -68,13 +64,13 @@ describe("TC000X_WebdriverIO-Validation_find_Selectors", () => {
     );
   });
 
-  it("WebdriverIO-Validation - Navigate to systelab components website and find an Input Field by TagName to be clickable", async () => {
+  it('WebdriverIO-Validation - Navigate to systelab components website and find an Input Field by TagName to be clickable', async () => {
     await navigationBar.waitToBeDisplayed();
-    await showCasePage.getTextBoxByTagName().setText("found By TagName");
+    await showCasePage.getTextBoxByTagName().setText('found By TagName');
     await showCasePage.getTextBoxByTagName().waitToBeClickable();
 
     await ReportUtility.addExpectedResult(
-      "The systelab component found by TagName is shown as Clickable",
+      'The systelab component found by TagName is shown as Clickable',
       async () => {
         AssertionUtility.expectTrue(
           await showCasePage.getTextBoxByTagName().isClickable()
@@ -83,14 +79,14 @@ describe("TC000X_WebdriverIO-Validation_find_Selectors", () => {
     );
   });
 
-  it("WebdriverIO-Validation - Navigate to systelab components website and find Label by Text", async () => {
-    const fakeLabel = "fakeLabelText";
-    const existLabel = "Chips";
+  it('WebdriverIO-Validation - Navigate to systelab components website and find Label by Text', async () => {
+    const fakeLabel = 'fakeLabelText';
+    const existLabel = 'Chips';
     await navigationBar.waitToBeDisplayed();
     await showCasePage.getLabelByElementText(existLabel).waitToBeDisplayed();
     await showCasePage.getLabelByElementText(fakeLabel).waitToBeNotPresent();
     await ReportUtility.addExpectedResult(
-      "The systelab component found by Label Text is shown as Present",
+      'The systelab component found by Label Text is shown as Present',
       async () => {
         AssertionUtility.expectTrue(
           await showCasePage.getLabelByElementText(existLabel).isPresent()
@@ -98,7 +94,7 @@ describe("TC000X_WebdriverIO-Validation_find_Selectors", () => {
       }
     );
     await ReportUtility.addExpectedResult(
-      "The fake Label Text is not Present",
+      'The fake Label Text is not Present',
       async () => {
         AssertionUtility.expectFalse(
           await showCasePage.getLabelByElementText(fakeLabel).isPresent()
@@ -107,16 +103,16 @@ describe("TC000X_WebdriverIO-Validation_find_Selectors", () => {
     );
   });
 
-  it("WebdriverIO-Validation - Navigate to systelab components website and find Button by Text", async () => {
+  it('WebdriverIO-Validation - Navigate to systelab components website and find Button by Text', async () => {
     const modalsTab: number = 1;
-    const fakeButton = "fakeButtonText";
-    const existButton = "Calendar";
+    const fakeButton = 'fakeButtonText';
+    const existButton = 'Calendar';
     await navigationBar.waitToBeDisplayed();
     await browserService.openTabByNumber(modalsTab);
     await showCasePage.getButtonByText(existButton).waitToBeDisplayed();
     await showCasePage.getButtonByText(fakeButton).waitToBeNotPresent();
     await ReportUtility.addExpectedResult(
-      "The systelab component found by Button Text is shown as Clickable",
+      'The systelab component found by Button Text is shown as Clickable',
       async () => {
         AssertionUtility.expectTrue(
           await showCasePage.getButtonByText(existButton).isClickable()
@@ -124,7 +120,7 @@ describe("TC000X_WebdriverIO-Validation_find_Selectors", () => {
       }
     );
     await ReportUtility.addExpectedResult(
-      "The fake Button by Text is not Present",
+      'The fake Button by Text is not Present',
       async () => {
         AssertionUtility.expectFalse(
           await showCasePage.getButtonByText(fakeButton).isPresent()
@@ -133,11 +129,11 @@ describe("TC000X_WebdriverIO-Validation_find_Selectors", () => {
     );
   });
 
-  it("WebdriverIO-Validation - Navigate to systelab components website and find Input Field Disabled", async () => {
+  it('WebdriverIO-Validation - Navigate to systelab components website and find Input Field Disabled', async () => {
     await navigationBar.waitToBeDisplayed();
     await showCasePage.getTextBoxDisabled().waitToBeNotClickable();
     await ReportUtility.addExpectedResult(
-      "The systelab component is shown as Disabled (non Enabled)",
+      'The systelab component is shown as Disabled (non Enabled)',
       async () => {
         AssertionUtility.expectFalse(
           await showCasePage.getTextBoxDisabled().isEnabled()
@@ -146,34 +142,34 @@ describe("TC000X_WebdriverIO-Validation_find_Selectors", () => {
     );
   });
 
-  it("WebdriverIO-Validation - Navigate to systelab components website and find all buttons by ClassName, TagName and CSS", async () => {
+  it('WebdriverIO-Validation - Navigate to systelab components website and find all buttons by ClassName, TagName and CSS', async () => {
     const modalsTab: number = 1;
     const numberOfButtons: number = 26;
     await navigationBar.waitToBeDisplayed();
     await browserService.openTabByNumber(modalsTab);
     await ReportUtility.addExpectedResult(
-      numberOfButtons + " buttons are found by TagName",
+      numberOfButtons + ' buttons are found by TagName',
       async () => {
         AssertionUtility.expectEqual(
-          await showCasePage.countAllButtonByTagname(),
+          await showCasePage.countAllButtonsByTagname(),
           numberOfButtons
         );
       }
     );
     await ReportUtility.addExpectedResult(
-      numberOfButtons + " buttons are found by ClassName",
+      numberOfButtons + ' buttons are found by ClassName',
       async () => {
         AssertionUtility.expectEqual(
-          await showCasePage.countAllButtonByClassName(),
+          await showCasePage.countAllButtonsByClassName(),
           numberOfButtons
         );
       }
     );
     await ReportUtility.addExpectedResult(
-      numberOfButtons + " buttons are found by Css",
+      numberOfButtons + ' buttons are found by Css',
       async () => {
         AssertionUtility.expectEqual(
-          await showCasePage.countAllButtonByCss(),
+          await showCasePage.countAllButtonsByCss(),
           numberOfButtons
         );
       }
