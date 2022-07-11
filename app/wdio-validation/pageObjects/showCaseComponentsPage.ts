@@ -1,4 +1,4 @@
-import { BasePage, InputField } from 'systelab-components-wdio-test';
+import { BasePage, InputField, Button } from 'systelab-components-wdio-test';
 
 export class ShowCaseComponentsPage extends BasePage {
     constructor() {
@@ -20,7 +20,15 @@ export class ShowCaseComponentsPage extends BasePage {
     public getTextBoxById(): InputField {
       return new InputField(this.byId('full-width-input'));
     }
-  
+
+     public getButtonByCCS(): Button {
+      return new Button(this.byCSS('showcase-searcher > .container-fluid > div:nth-of-type(1) .icon-question'));
+    } 
+
+    public getTextBoxDisabledById(): Button {
+      return new Button(this.byId('disabled-input'));
+    }
+
     public getTextBoxByTagName(): InputField {
       return new InputField(this.byTagName('input'));
     }
