@@ -3,7 +3,7 @@ import { BrowserInteractionService } from '../services/browserInteraction-servic
 import { NavigationBarPage } from '../pageObjects/navigationBarPage';
 import { environment } from '../utils/environment.dev';
 
-describe('TC0002_WebdriverIO-Validation_browser_Interaction', () => {
+describe('TC0002_WebdriverIO-Validation_Browser_Interaction', () => {
   let browserService: BrowserInteractionService;
   let navigationBar: NavigationBarPage;
   let systelabTitle = 'Systelab Components Library';

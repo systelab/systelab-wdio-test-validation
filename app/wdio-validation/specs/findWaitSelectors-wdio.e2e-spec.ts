@@ -3,7 +3,7 @@ import { BrowserInteractionService } from '../services/browserInteraction-servic
 import { NavigationBarPage } from '../pageObjects/navigationBarPage';
 import { ShowCaseComponentsPage } from '../pageObjects/showCaseComponentsPage';
 
-describe('TC0003_WebdriverIO-Validation_find_Wait_Selectors', () => {
+describe('TC0003_WebdriverIO-Validation_Find_Wait_Selectors', () => {
   let browserService: BrowserInteractionService;
   let navigationBar: NavigationBarPage;
   let showCasePage: ShowCaseComponentsPage;
