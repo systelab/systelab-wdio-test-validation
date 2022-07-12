@@ -27,13 +27,6 @@ exports.config= {
             transpileOnly: true,
             project: 'wdio-validation/tsconfig.wdio.json'
         },
-        tsConfigPathsOpts: {
-            baseUrl: './',
-            paths: {
-                "@wdio-validation-pages": ["wdio-validation/pageObjects/index.ts"],
-                "@wdio-validation-services": ["wdio-validation/services/index.ts"],
-            }
-        }
     },
     //
     // ==================
