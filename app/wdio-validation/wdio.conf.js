@@ -26,12 +26,14 @@ exports.config= {
         tsNodeOpts: {
             transpileOnly: true,
             project: 'wdio-validation/tsconfig.wdio.json'
+        },
+        tsConfigPathsOpts: {
+            baseUrl: './',
+            paths: {
+                "@wdio-validation-pages": ["wdio-validation/pageObjects/index.ts"],
+                "@wdio-validation-services": ["wdio-validation/services/index.ts"],
+            }
         }
-        // tsconfig-paths is only used if "tsConfigPathsOpts" are provided, if you
-        // do please make sure "tsconfig-paths" is installed as dependency
-        // tsConfigPathsOpts: {
-        //     baseUrl: './'
-        // }
     },
     //
     // ==================
@@ -85,17 +87,23 @@ exports.config= {
         // 5 instances get started at a time.
         maxInstances: 5,
         //
-        browserName: 'chrome',
         acceptInsecureCerts: true,
-        // If outputDir is provided WebdriverIO can capture driver session logs
-        // it is possible to configure which logTypes to include/exclude.
-        // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
-        // excludeDriverLogs: ['bugreport', 'server'],
+        browserName: 'MicrosoftEdge',
+        version: 'latest',
+        'ms:edgeOptions': {
+            args: [ "--headless", "--disable-gpu", "--window-size=1920,1080", "--no-sandbox", "--disable-dev-shm-usage"]
+            // args: [ "--start-fullscreen"/*] 
+        },
+    },{
+        acceptInsecureCerts: true,
+        browserName: 'chrome',
+        version: 'latest',
         'goog:chromeOptions': {
-            //args: [ "--headless", "--disable-gpu", "--window-size=1920,1080", "--no-sandbox", "--disable-dev-shm-usage"]
-            args: [ "--start-fullscreen"] 
-          }
-    }],
+            args: [ "--headless", "--disable-gpu", "--window-size=1920,1080", "--no-sandbox", "--disable-dev-shm-usage"]
+            //args: [ "--start-fullscreen"/*] 
+        }
+    }
+],
     //
     // ===================
     // Test Configurations
@@ -142,9 +150,7 @@ exports.config= {
     // Test runner services
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
-    // commands. Instead, they hook themselves up into the test process.
-    services: ['chromedriver'/* ,'edgedriver' */],
-    
+    // commands. Instead, they hook themselves up into the test process.    
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: https://webdriver.io/docs/frameworks
@@ -166,10 +172,10 @@ exports.config= {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
     afterTest: async function(test, context, { error, result, duration, passed, retries }) {
-        var name = Date.now();
-        await browser.saveScreenshot('./wdio-validation/allure-results/' + name + '.png');
+        var date = Date.now();
+        await browser.saveScreenshot('./wdio-validation/allure-results/' + date + '.png');
     },
-    reporters: [/* 'spec',*/
+    reporters: ['spec',
         ['allure', {
             outputDir: './wdio-validation/allure-results/',
             disableWebdriverStepsReporting: true,
