@@ -25,7 +25,7 @@ describe('TC0001_WebdriverIO-Validation_Action_OnSelectors', () => {
       'TC0001_WebdriverIO-Validation_Action_OnSelectors'
     );
     TestIdentification.setDescription(
-      'Goal: The purpose of this test case is to verify different actions on elements are performed'
+      'Goal: The purpose of this test case is to verify different actions are performed on elements of the Systelab Components website'
     );
     await browserService.navigateToSystelabComponents();
   });
