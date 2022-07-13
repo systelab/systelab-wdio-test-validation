@@ -5,6 +5,14 @@
 # systelab-wdio-test-validation
 This repository includes the WebdriverIO test validation on the [SystelabComponents](https://systelab.github.io/components) using [WebDriverIO](https://https://webdriver.io/) test framework.
 
+Important, the validation is performed with the next webdriverio specific versions. Be careful when executing the validation that these versions are present.
+- "@wdio/allure-reporter": "7.16.10",
+- "@wdio/cli": "7.16.10",
+- "@wdio/jasmine-framework": "7.16.6",
+- "@wdio/local-runner": "7.16.10",
+- "@wdio/spec-reporter": "7.16.9",
+- "wdio-chromedriver-service": "7.2.2"
+
 ## Install webdriverIO:
 To install all the dependencies type:
 ```bash
