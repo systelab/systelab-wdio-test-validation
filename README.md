@@ -20,14 +20,14 @@ On the Webdriverio installation steps select the following options in order to i
 - wdio-edgedriver-service
 - chromedriver
 
-Options:
-On my local machine
-jasmine
-TypeScript as a compiler
-./app/wdio-validation/specs where the test specs would be
-spec and allure reporter
-chromedriver and edgedriver services
-and select the npm install
+Options to be selected:
+- On my local machine
+- Jasmine
+- TypeScript as a compiler
+- ./app/wdio-validation/specs where the test specs would be
+- Spec and allure reporter
+- Chromedriver and edgedriver services
+- And select the npm install
 
 ### Install Systelab Components wdio library
 You need to install the systelab components wdio library
@@ -53,5 +53,5 @@ npx wdio run wdio-validation/wdio.conf.js
 ```bash
 cd wdio-validation
 allure serve
-automatically it would be open the allure reporte
+automatically it would be open the allure reporter
 ```
