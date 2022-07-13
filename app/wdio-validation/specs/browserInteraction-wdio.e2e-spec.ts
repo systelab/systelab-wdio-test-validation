@@ -17,18 +17,18 @@ describe("TC0002_WebdriverIO-Validation_Browser_Interaction", () => {
       (browser.capabilities as any).browserName
     );
     ReportUtility.addLabel(
-      "browserVersion",
+      "Browser Version",
       (browser.capabilities as any).browserVersion
     );
     ReportUtility.addLabel(
-      "testExecutionDateTime",
+      "Test Execution Date Time",
       new Date().toLocaleString()
     );
     TestIdentification.setTmsLink(
       "TC0002_WebdriverIO-Validation_browser_Interaction"
     );
     TestIdentification.setDescription(
-      "Goal: The purpose of this test case is to verify the browser interaction navigation "
+      "Goal: The purpose of this test case is to verify the browser interaction navigation"
     );
     await browserService.navigateToSystelabComponents();
   });

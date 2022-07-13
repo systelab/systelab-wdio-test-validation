@@ -5,7 +5,31 @@
 # systelab-wdio-test-validation
 This repository includes the WebdriverIO test validation on the [SystelabComponents](https://systelab.github.io/components) using [WebDriverIO](https://https://webdriver.io/) test framework.
 
-### Prerequisites
+## Install webdriverIO:
+To install all the dependencies type:
+```bash
+npm init wdio
+```
+On the Webdriverio installation steps select the following options in order to install the wdio packages:
+
+- @wdio/local-runner
+- @wdio/jasmine-framework
+- @wdio/spec-reporter
+- @wdio/allure-reporter
+- wdio-chromedriver-service
+- wdio-edgedriver-service
+- chromedriver
+
+Options:
+On my local machine
+jasmine
+TypeScript as a compiler
+./app/wdio-validation/specs where the test specs would be
+spec and allure reporter
+chromedriver and edgedriver services
+and select the npm install
+
+### Install Systelab Components wdio library
 You need to install the systelab components wdio library
 ```bash
 npm install systelab-components-wdio-test --save
@@ -17,37 +41,17 @@ git clone https://github.com/systelab/systelab-components-wdio-test.git
 cd systelab-components-wdio-test
 ```
 
-## First steps:
-To install all the dependencies type:
-```bash
-npm init to add a package.json
-npm install
-```
-
-```bash
-npm init wdio
-```
-And in order to create the WDIO Configuration file select the following options:
-On my local machine
-jasmine
-TypeScript as a compiler
-./app/wdio-validation/specs where the test specs would be
-spec and allure reporter
-chromedriver and edgedriver
-set the https://systelab.github.io/components/ as base url
-
-## Install edge driver
-```bash
-npm install wdio-edgedriver-service --save-dev
-```
-
 ## Run Validation
 To run webdriverio validation test, use the following command:
 
 ```bash
-npm run wdio
-```
-or
-```bash
 cd app
 npx wdio run wdio-validation/wdio.conf.js
+```
+
+## Allure Results
+```bash
+cd wdio-validation
+allure serve
+automatically it would be open the allure reporte
+```
