@@ -84,7 +84,9 @@ exports.config= {
         browserName: 'MicrosoftEdge',
         version: 'latest',
         'ms:edgeOptions': {
+            /* The above code is setting the browser to run in headless mode for the continuos integration*/
             args: [ "--headless", "--disable-gpu", "--window-size=1920,1080", "--no-sandbox", "--disable-dev-shm-usage"]
+            /* Setting the window size to 1920x1080 and starting the browser in fullscreen mode. */
             // args: [ "--start-fullscreen"/*] 
         },
     },{
@@ -92,8 +94,10 @@ exports.config= {
         browserName: 'chrome',
         version: 'latest',
         'goog:chromeOptions': {
+            /* The above code is setting the browser to run in headless mode for the continuos integration*/
             args: [ "--headless", "--disable-gpu", "--window-size=1920,1080", "--no-sandbox", "--disable-dev-shm-usage"]
-            //args: [ "--start-fullscreen"/*] 
+            /* Setting the window size to 1920x1080 and starting the browser in fullscreen mode. */
+            // args: [ "--start-fullscreen"/*] 
         }
     }
 ],

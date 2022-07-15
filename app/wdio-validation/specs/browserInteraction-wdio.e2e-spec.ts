@@ -1,6 +1,6 @@
 import { AssertionUtility, ReportUtility, TestIdentification } from 'systelab-components-wdio-test';
-import { BrowserInteractionService } from '../services/browserInteraction-service';
-import { NavigationBarPage } from '../pageObjects/navigationBarPage';
+import { BrowserInteractionService } from '../services/browserInteraction.service';
+import { NavigationBarPage } from '../page-objects/navigationBarPage';
 import { environment } from '../utils/environment.dev';
 
 describe("TC0002_WebdriverIO-Validation_Browser_Interaction", () => {

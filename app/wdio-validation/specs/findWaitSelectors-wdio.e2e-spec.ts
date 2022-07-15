@@ -1,7 +1,7 @@
 import { AssertionUtility, ReportUtility, TestIdentification } from 'systelab-components-wdio-test';
-import { BrowserInteractionService } from '../services/browserInteraction-service';
-import { NavigationBarPage } from '../pageObjects/navigationBarPage';
-import { ShowCaseComponentsPage } from '../pageObjects/showCaseComponentsPage';
+import { BrowserInteractionService } from '../services/browserInteraction.service';
+import { NavigationBarPage } from '../page-objects/navigationBarPage';
+import { ShowCaseComponentsPage } from '../page-objects/showCaseComponentsPage';
 
 describe("TC0003_WebdriverIO-Validation_Find_Wait_Selectors", () => {
   let browserService: BrowserInteractionService;

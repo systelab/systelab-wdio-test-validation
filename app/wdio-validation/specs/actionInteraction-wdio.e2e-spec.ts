@@ -1,7 +1,7 @@
 import { AssertionUtility, ReportUtility, TestIdentification, DefaultTimeout } from "systelab-components-wdio-test";
-import { BrowserInteractionService } from "../services/browserInteraction-service";
-import { ShowCaseComponentsPage } from "../pageObjects/showCaseComponentsPage";
-import { SystelabModalComponent } from "../pageObjects/systelabModalComponent";
+import { BrowserInteractionService } from "../services/browserInteraction.service";
+import { ShowCaseComponentsPage } from "../page-objects/showCaseComponentsPage";
+import { SystelabModalComponent } from "../page-objects/systelabModalComponent";
 
 describe("TC0001_WebdriverIO-Validation_Action_OnSelectors", () => {
   let browserService: BrowserInteractionService;

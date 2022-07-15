@@ -1,6 +1,6 @@
 import { environment } from '../utils/environment.dev';
 import { Browser } from 'systelab-components-wdio-test';
-import { NavigationBarPage } from '../pageObjects/navigationBarPage';
+import { NavigationBarPage } from '../page-objects/navigationBarPage';
 
 export class BrowserInteractionService {
   navigationBar = new NavigationBarPage();
