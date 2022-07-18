@@ -8,7 +8,7 @@ describe("TC0001_WebdriverIO-Validation_Action_OnSelectors", () => {
   let browserService: BrowserInteractionService;
   let expectation: ExpectationService;
   let showCasePage: ShowCaseComponentsPage;
-  let modalPage: SystelabModalComponent;
+  let systelabModal: SystelabModalComponent;
 
   const systelabTitle = "Systelab Components Library";
   const foundByID = "found by Id";
@@ -20,7 +20,7 @@ describe("TC0001_WebdriverIO-Validation_Action_OnSelectors", () => {
     browserService = new BrowserInteractionService();
     expectation = new ExpectationService();
     showCasePage = new ShowCaseComponentsPage();
-    modalPage = new SystelabModalComponent();
+    systelabModal = new SystelabModalComponent();
     ReportUtility.addLabel(
       "Browser",
       (browser.capabilities as any).browserName
@@ -95,11 +95,11 @@ describe("TC0001_WebdriverIO-Validation_Action_OnSelectors", () => {
       "The Systelab Components website is open and active",
       systelabTitle);
     await showCasePage.getIconQuestionButton().click();
-    await modalPage.waitToBeDisplayed(DefaultTimeout.SLOW_WAIT);
+    await systelabModal.waitToBeDisplayed(DefaultTimeout.SLOW_WAIT);
     await ReportUtility.addExpectedResult(
       "When perform a click on a button of the systelab component website, an expected modal window is open",
       async () => {
-        AssertionUtility.expectTrue(await modalPage.isDisplayed());
+        AssertionUtility.expectTrue(await systelabModal.isDisplayed());
       }
     );
   });
