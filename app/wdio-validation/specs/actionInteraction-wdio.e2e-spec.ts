@@ -7,11 +7,12 @@ describe("TC0001_WebdriverIO-Validation_Action_OnSelectors", () => {
   let browserService: BrowserInteractionService;
   let showCasePage: ShowCaseComponentsPage;
   let modalPage: SystelabModalComponent;
-  let systelabTitle = "Systelab Components Library";
-  let foundByID = "found by Id";
-  let empty = "";
-  let enabledTextBox = "enabled text box";
-  let disabledTextBox = "disabled text box";
+
+  const systelabTitle = "Systelab Components Library";
+  const foundByID = "found by Id";
+  const empty = "";
+  const enabledTextBox = "enabled text box";
+  const disabledTextBox = "disabled text box";
 
   beforeEach(async () => {
     browserService = new BrowserInteractionService();

@@ -6,8 +6,9 @@ import { environment } from '../utils/environment.dev';
 describe("TC0002_WebdriverIO-Validation_Browser_Interaction", () => {
   let browserService: BrowserInteractionService;
   let navigationBar: NavigationBarPage;
-  let systelabTitle = "Systelab Components Library";
-  let systelabGitHubTitle = "systelab/systelab-components · GitHub";
+
+  const systelabTitle = "Systelab Components Library";
+  const systelabGitHubTitle = "systelab/systelab-components · GitHub";
 
   beforeEach(async () => {
     browserService = new BrowserInteractionService();

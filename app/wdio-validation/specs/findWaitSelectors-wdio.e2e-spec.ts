@@ -8,10 +8,10 @@ describe("TC0003_WebdriverIO-Validation_Find_Wait_Selectors", () => {
   let navigationBar: NavigationBarPage;
   let showCasePage: ShowCaseComponentsPage;
 
-  let foundByID = "found by Id";
-  let foundByClass = "found by ClassName";
-  let foundByCss = "found by Css";
-  let foundByTagName = "found by TagName";
+  const foundByID = "found by Id";
+  const foundByClass = "found by ClassName";
+  const foundByCss = "found by Css";
+  const foundByTagName = "found by TagName";
   const modalsTab: number = 1;
 
   beforeEach(async () => {
