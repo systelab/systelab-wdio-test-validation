@@ -1,10 +1,12 @@
 import { AssertionUtility, ReportUtility, TestIdentification, DefaultTimeout } from "systelab-components-wdio-test";
 import { BrowserInteractionService } from "../services/browserInteraction.service";
+import { ExpectationService } from "../services/expectation.service";
 import { ShowCaseComponentsPage } from "../page-objects/showCaseComponentsPage";
 import { SystelabModalComponent } from "../page-objects/systelabModalComponent";
 
 describe("TC0001_WebdriverIO-Validation_Action_OnSelectors", () => {
   let browserService: BrowserInteractionService;
+  let expectation: ExpectationService;
   let showCasePage: ShowCaseComponentsPage;
   let modalPage: SystelabModalComponent;
 
@@ -16,6 +18,7 @@ describe("TC0001_WebdriverIO-Validation_Action_OnSelectors", () => {
 
   beforeEach(async () => {
     browserService = new BrowserInteractionService();
+    expectation = new ExpectationService();
     showCasePage = new ShowCaseComponentsPage();
     modalPage = new SystelabModalComponent();
     ReportUtility.addLabel(
@@ -43,15 +46,9 @@ describe("TC0001_WebdriverIO-Validation_Action_OnSelectors", () => {
 
   it("TC0001-01-WebdriverIO-Validation - Navigate to Systelab Components, find an Input Field, set and get a value", async () => {
     await showCasePage.waitToBeDisplayed();
-    await ReportUtility.addExpectedResult(
+    await expectation.expectWebsiteOpenAndActive(
       "The Systelab Components website is open and active",
-      async () => {
-        AssertionUtility.expectContains(
-          await browser.getTitle(),
-          systelabTitle
-        );
-      }
-    );
+      systelabTitle);
 
     await showCasePage.getTextBoxById().setText(foundByID);
     await ReportUtility.addExpectedResult(
@@ -67,15 +64,9 @@ describe("TC0001_WebdriverIO-Validation_Action_OnSelectors", () => {
 
   it("TC0001-02-WebdriverIO-Validation - Navigate to Systelab Components website, find an Input Field, set and clear a value", async () => {
     await showCasePage.waitToBeDisplayed();
-    await ReportUtility.addExpectedResult(
+    await expectation.expectWebsiteOpenAndActive(
       "The Systelab Components website is open and active",
-      async () => {
-        AssertionUtility.expectContains(
-          await browser.getTitle(),
-          systelabTitle
-        );
-      }
-    );
+      systelabTitle);
     await showCasePage.getTextBoxById().setText(foundByID);
     await ReportUtility.addExpectedResult(
       "When setting a new value in the systelab component Input Field the value is set correctly",
@@ -100,15 +91,9 @@ describe("TC0001_WebdriverIO-Validation_Action_OnSelectors", () => {
 
   it("TC0001-03-WebdriverIO-Validation - Navigate to Systelab Components website and click in a button", async () => {
     await showCasePage.waitToBeDisplayed();
-    await ReportUtility.addExpectedResult(
+    await expectation.expectWebsiteOpenAndActive(
       "The Systelab Components website is open and active",
-      async () => {
-        AssertionUtility.expectContains(
-          await browser.getTitle(),
-          systelabTitle
-        );
-      }
-    );
+      systelabTitle);
     await showCasePage.getIconQuestionButton().click();
     await modalPage.waitToBeDisplayed(DefaultTimeout.SLOW_WAIT);
     await ReportUtility.addExpectedResult(
@@ -121,15 +106,9 @@ describe("TC0001_WebdriverIO-Validation_Action_OnSelectors", () => {
 
   it("TC0001-04-WebdriverIO-Validation - Navigate to Systelab Components, on disabled Input Field try to set a value", async () => {
     await showCasePage.waitToBeDisplayed();
-    await ReportUtility.addExpectedResult(
+    await expectation.expectWebsiteOpenAndActive(
       "The Systelab Components website is open and active",
-      async () => {
-        AssertionUtility.expectContains(
-          await browser.getTitle(),
-          systelabTitle
-        );
-      }
-    );
+      systelabTitle);
     await showCasePage.getTextBoxDisabled().setText(disabledTextBox);
     await showCasePage.getTextBoxById().setText(enabledTextBox);
     await ReportUtility.addExpectedResult(
