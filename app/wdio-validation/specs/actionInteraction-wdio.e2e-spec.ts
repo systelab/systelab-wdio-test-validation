@@ -104,7 +104,7 @@ describe("TC0001_WebdriverIO-Validation_Action_OnSelectors", () => {
     );
   });
 
-  it("TC0001-04-WebdriverIO-Validation - Navigate to Systelab Components, on disabled Input Field try to set a value", async () => {
+  it("TC0001-04-WebdriverIO-Validation - Navigate to Systelab Components, set value on a disabled and enabled text box", async () => {
     await showCasePage.waitToBeDisplayed();
     await expectation.expectWebsiteOpenAndActive(
       "The Systelab Components website is open and active",
@@ -112,7 +112,7 @@ describe("TC0001_WebdriverIO-Validation_Action_OnSelectors", () => {
     await showCasePage.getTextBoxDisabled().setText(disabledTextBox);
     await showCasePage.getTextBoxById().setText(enabledTextBox);
     await ReportUtility.addExpectedResult(
-      "On disabled input field is not been able to set value",
+      "On disabled text box is not been able to set value",
       async () => {
         AssertionUtility.expectEqual(
           await showCasePage.getTextBoxDisabled().getText(),
@@ -121,7 +121,7 @@ describe("TC0001_WebdriverIO-Validation_Action_OnSelectors", () => {
       }
     );
     await ReportUtility.addExpectedResult(
-      "On enabled input field is been able to set value",
+      "On enabled text box is been able to set value",
       async () => {
         AssertionUtility.expectEqual(
           await showCasePage.getTextBoxById().getText(),
