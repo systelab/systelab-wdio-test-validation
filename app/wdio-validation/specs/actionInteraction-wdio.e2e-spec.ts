@@ -118,6 +118,11 @@ describe("TC0001_WebdriverIO-Validation_Action_OnSelectors", () => {
           await showCasePage.getTextBoxDisabled().getText(),
           empty
         );
+      }
+    );
+    await ReportUtility.addExpectedResult(
+      "On enabled input field is been able to set value",
+      async () => {
         AssertionUtility.expectEqual(
           await showCasePage.getTextBoxById().getText(),
           enabledTextBox
