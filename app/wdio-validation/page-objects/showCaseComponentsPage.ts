@@ -21,10 +21,6 @@ export class ShowCaseComponentsPage extends BasePage {
     return new Button(this.byCSS('.icon-question'));
   }
 
-  public getTextBoxDisabledById(): Button {
-    return new Button(this.byId('disabled-input'));
-  }
-
   public getTextBoxByTagName(): InputField {
     return new InputField(this.byTagName('input'));
   }
